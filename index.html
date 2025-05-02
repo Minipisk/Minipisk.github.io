@@ -3,44 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIO | Impossible Blade</title>
+    <title>Impossible Blade | BIO</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Экран входа -->
     <div class="splash-screen" id="splash">
-        <h2 class="splash-text">▶ НАЖМИ ДЛЯ СТАРТА</h2>
+        <h2>▶ НАЖМИТЕ ДЛЯ СТАРТА</h2>
     </div>
 
-    <!-- Основной контент -->
-    <div class="profile" id="profile">
-        <div class="content">
-            <img src="assets/avatar.jpg" alt="Аватар" class="avatar">
-            <h1>IMPOSSIBLE BLADE</h1>
-            <p>Создаю контент о технологиях и боевых искусствах</p>
-            
-            <!-- Кастомный плеер -->
-            <div class="player-container">
-                <audio id="audio-player" loop>
-                    <source src="assets/music.mp3" type="audio/mpeg">
-                </audio>
-                <div class="player-controls">
-                    <button class="play-btn">▶</button>
-                    <div class="progress-bar">
-                        <div class="progress"></div>
-                    </div>
+    <div class="main-container" id="main">
+        <div class="profile-card">
+            <img src="assets/photo.jpg" alt="Аватар" class="profile-avatar">
+            <div class="profile-name">IMPOSSIBLE<br>BLADE</div>
+            <div class="profile-desc">Технологии и боевые искусства</div>
+        </div>
+
+        <div class="player-card">
+            <div class="player-controls">
+                <button class="player-btn" id="play-btn">
+                    <img src="assets/play.jpg" alt="Play" id="play-icon">
+                </button>
+                <div class="progress-container">
+                    <div class="progress-bar" id="progress"></div>
                 </div>
             </div>
+        </div>
 
-            <!-- Соцсети -->
-            <div class="social-grid">
-                <a href="https://t.me/impossible_blade" class="social-btn tg" target="_blank">
-                    <img src="assets/telegram-icon.svg" alt="Telegram">
-                </a>
-                <a href="https://www.tiktok.com/@ufceventsfree" class="social-btn tiktok" target="_blank">
-                    <img src="assets/tiktok-icon.svg" alt="TikTok">
-                </a>
-            </div>
+        <div class="social-card">
+            <a href="https://t.me/impossible_blade" class="social-link">
+                <img src="assets/tg.jpg" alt="Telegram" class="social-icon">
+                <span>Telegram</span>
+            </a>
+            <a href="https://www.tiktok.com/@ufceventsfree" class="social-link">
+                <img src="assets/tiktok.jpg" alt="TikTok" class="social-icon">
+                <span>TikTok</span>
+            </a>
         </div>
     </div>
 
