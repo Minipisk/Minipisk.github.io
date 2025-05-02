@@ -1,188 +1,198 @@
-/* Базовый сброс */
+/* Базовые стили */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background: #000;
+    font-family: 'Roboto', sans-serif;
+    background-color: #000;
     color: #fff;
-    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
-    position: relative;
 }
 
-/* Снежинки */
-.snowflake {
-    position: absolute;
-    color: #fff;
-    font-size: 1.5rem;
-    pointer-events: none;
-    user-select: none;
-    animation: fall linear forwards;
-    z-index: 1;
-}
-
-@keyframes fall {
-    0% { transform: translateY(-10vh); }
-    100% { transform: translateY(110vh); }
-}
-
-/* Экран входа */
+/* Экран загрузки */
 .splash-screen {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.95);
+    background: #000;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
     cursor: pointer;
-    transition: opacity 0.5s;
 }
 
-.splash-text {
-    animation: pulse 1.5s infinite;
+.splash-screen h2 {
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
-    text-shadow: 0 0 15px #00ffff;
+    color: #00ffff;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
-    0%, 100% { opacity: 0.6; }
+    0%, 100% { opacity: 0.7; }
     50% { opacity: 1; }
 }
 
-/* Основной контент */
-.profile {
+/* Основной контейнер */
+.main-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
     display: none;
-    position: relative;
-    z-index: 2;
-    padding: 2rem;
-    max-width: 600px;
-    margin: 0 auto;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.content {
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(12px);
+/* Карточка профиля */
+.profile-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
     border-radius: 20px;
-    padding: 2rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.avatar {
+.profile-avatar {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1.5rem;
-    border: 3px solid #fff;
-    box-shadow: 0 0 30px rgba(0,255,255,0.3);
+    border: 3px solid #00ffff;
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
 }
 
-h1 {
-    margin-bottom: 1rem;
-    font-size: 2rem;
-    color: #00ffff;
+.profile-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-p {
-    margin-bottom: 2rem;
-    opacity: 0.9;
+.profile-desc {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 /* Плеер */
-.player-container {
-    margin: 2rem 0;
+.player-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .player-controls {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 15px;
 }
 
-.play-btn {
+.player-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     background: #00ffff;
     border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     transition: transform 0.3s;
 }
 
-.play-btn:hover {
+.player-btn:hover {
     transform: scale(1.1);
 }
 
-.progress-bar {
-    flex-grow: 1;
+.player-btn img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+}
+
+.progress-container {
+    flex: 1;
     height: 6px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
     border-radius: 3px;
     cursor: pointer;
 }
 
-.progress {
+.progress-bar {
     height: 100%;
     background: #00ffff;
     border-radius: 3px;
     width: 0%;
-    transition: width 0.1s linear;
+    transition: width 0.1s;
 }
 
 /* Соцсети */
-.social-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    margin-top: 2rem;
+.social-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.social-btn {
+.social-link {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 1rem;
-    border-radius: 12px;
+    gap: 15px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.1rem;
     transition: transform 0.3s;
 }
 
-.social-btn:hover {
-    transform: translateY(-3px);
+.social-link:hover {
+    transform: translateX(5px);
 }
 
-.tg { background: #0088cc; }
-.tiktok { background: #000; border: 1px solid #fff; }
-
-.social-btn img {
-    width: 30px;
-    height: 30px;
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 /* Адаптация */
-@media (max-width: 768px) {
-    .content {
-        padding: 1.5rem;
-        margin: 1rem;
+@media (max-width: 600px) {
+    .main-container {
+        padding: 15px;
     }
-
-    .avatar {
+    
+    .profile-card {
+        padding: 20px;
+    }
+    
+    .profile-name {
+        font-size: 1.8rem;
+    }
+    
+    .profile-avatar {
         width: 120px;
         height: 120px;
     }
-
-    h1 {
-        font-size: 1.75rem;
-    }
-
-    .splash-text {
-        font-size: 1.5rem;
-    }
-    }
+}
